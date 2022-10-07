@@ -1,50 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './style.scss';
+import React from 'react'
+import PropTypes from 'prop-types'
+import './style.scss'
 
 /**
  * Primary UI component for user interaction
  */
-export const PasswordInput = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-};
-
-PasswordInput.propTypes = {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
-  /**
-   * How large should the button be?
-   */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  /**
-   * Button contents
-   */
-  label: PropTypes.string.isRequired,
-  /**
-   * Optional click handler
-   */
-  onClick: PropTypes.func,
-};
+export const PasswordInput = () => {
+    return (
+        <form>
+            <input type="password"></input>
+            <div className="bar_container">
+                <div id="password_length"></div>
+            </div>
+        </form>
+    )
+}
 
 PasswordInput.defaultProps = {
-  backgroundColor: null,
-  primary: false,
-  size: 'medium',
-  onClick: undefined,
-};
+    backgroundColor: null,
+    primary: false,
+    size: 'medium',
+    onClick: undefined,
+}

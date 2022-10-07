@@ -21,6 +21,7 @@
     "@babel/runtime": "^7.19.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.5",
+    "dart-sass": "^1.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.55.0",
@@ -36,6 +37,7 @@
     "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/react": "^6.5.12",
     "@storybook/testing-library": "^0.0.13",
+    "sass-loader": "^13.1.0",
     "webpack": "^5.74.0"
   }
 }
