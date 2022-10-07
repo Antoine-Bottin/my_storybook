@@ -31,7 +31,14 @@ module.exports = {
             use: ['style-loader', 'css-loader', 'sass-loader'],
         })
 
-        config.resolve.extensions.push('.js', '.jsx', '.css', '.scss')
+        config.resolve.extensions.push(
+            '.js',
+            '.jsx',
+            'ts',
+            'tsx',
+            '.css',
+            '.scss'
+        )
 
         return config
     },
