@@ -4,10 +4,17 @@ import './style.scss'
 import * as React from 'react'
 import * as classNames from 'classnames'
 
-/**
- * Primary UI component for user interaction
- */
-export const PasswordInput = () => {
+interface Props {
+    backgroundColor?: string
+    borderColor?: string
+    inputBackgroundColor?: string
+}
+
+export const PasswordInput = ({
+    backgroundColor,
+    borderColor,
+    inputBackgroundColor,
+}: Props) => {
     const [passwordValue, setPasswordValue] = useState('')
 
     const handlePAsswordValueChange = (event: any) => {
@@ -26,23 +33,38 @@ export const PasswordInput = () => {
         passwordLength(passwordValue)
     )
 
+    const borderClasses = classNames()
+
     return (
-        <form>
-            <input
-                type="password"
-                value={passwordValue}
-                onChange={handlePAsswordValueChange}
-            />
-            <div className="bar_container">
-                <div className={passwordLengthClasses}></div>
-            </div>
-        </form>
+        <div
+            style={{
+                height: '100vh',
+                width: '100%',
+                padding: '5rem',
+                backgroundColor: backgroundColor,
+            }}
+        >
+            <form>
+                <input
+                    style={{
+                        border: `2px solid ${borderColor}`,
+                        boxShadow: `0px 0px 15px${borderColor}`,
+                        backgroundColor: inputBackgroundColor,
+                    }}
+                    className="password-input"
+                    type="password"
+                    value={passwordValue}
+                    onChange={handlePAsswordValueChange}
+                />
+                <div className="bar_container">
+                    <div className={passwordLengthClasses}></div>
+                </div>
+            </form>
+        </div>
     )
 }
 
 PasswordInput.defaultProps = {
-    backgroundColor: null,
-    primary: false,
-    size: 'medium',
-    onClick: undefined,
+    backgroundColor: 'black',
+    borderColor: 'red',
 }
