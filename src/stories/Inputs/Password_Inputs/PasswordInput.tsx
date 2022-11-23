@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { ReactElement } from 'react'
 import { useState } from 'react'
-import classNames from 'classnames'
 import './style.scss'
+import * as React from 'react'
+import * as classNames from 'classnames'
 
 /**
  * Primary UI component for user interaction
@@ -14,16 +14,18 @@ export const PasswordInput = () => {
         setPasswordValue(event.target.value)
     }
 
-    const passwordLength = (passwordValue) => {
+    const passwordLength = (passwordValue: string): string => {
         if (passwordValue.length < 5) return 'bad'
         else if (passwordValue.length >= 5 && passwordValue.length <= 10)
             return 'good'
         else return 'perfect'
     }
+
     const passwordLengthClasses = classNames(
         'password-length',
         passwordLength(passwordValue)
     )
+
     return (
         <form>
             <input
