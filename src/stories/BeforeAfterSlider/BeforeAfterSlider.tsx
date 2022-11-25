@@ -8,13 +8,12 @@ export const BeforeAfterSlider = () => {
     const [mousePosition, setMousePosition] = useState({ X: 0, Y: 0 })
     const [elementWidth, setElementWidth] = useState(0)
     const [elementStartPosition, setElementStartPosition] = useState(0)
-    const [leftPartWidth, setLeftPartWidth] = useState(0)
+    const [leftPartWidth, setLeftPartWidth] = useState(10)
 
     const handleMouseMove = (event: any) => {
         setMousePosition({ X: event.clientX, Y: event.clientY })
         setLeftPartWidth(
-            ((mousePosition.X - elementStartPosition) / (elementWidth - 2)) *
-                100
+            ((mousePosition.X - elementStartPosition) / elementWidth) * 100
         )
     }
 
@@ -29,26 +28,21 @@ export const BeforeAfterSlider = () => {
                 mousePosition : X = {mousePosition.X} Y = {mousePosition.Y}
             </li>
             <li>elementWidth: {elementWidth}</li>
-
-            <div
-                className="before-after-slider__container"
-                ref={(el) => {
-                    handleElementInfo(el)
-                }}
-                onMouseMove={handleMouseMove}
-            >
+            <div className="before-after-container">
                 <div
-                    className="before-after-container__left-part"
-                    style={{
-                        width: `${leftPartWidth}%`,
-                    }}
-                ></div>
-                <div
+                    onMouseMove={handleMouseMove}
                     className="before-after-container__right-part"
-                    style={{
-                        width: `${100 - leftPartWidth}%`,
+                    ref={(el) => {
+                        handleElementInfo(el)
                     }}
-                ></div>
+                >
+                    <div
+                        style={{
+                            width: `${leftPartWidth}%`,
+                        }}
+                        className="before-after-container__left-part"
+                    ></div>
+                </div>
             </div>
         </>
     )
