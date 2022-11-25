@@ -1,7 +1,15 @@
 .before-after-slider__container {
-    height: 50vh;
+    height: 70vh;
     width: 50vw;
     display: flex;
     margin: 10rem;
     border: 0.2rem solid black;
+
+    .before-after-container__left-part {
+        background-color: chartreuse;
+    }
+
+    .before-after-container__right-part {
+        background-color: pink;
+    }
 }
