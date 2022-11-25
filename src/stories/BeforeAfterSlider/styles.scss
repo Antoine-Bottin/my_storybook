@@ -1,15 +1,18 @@
-.before-after-slider__container {
-    height: 70vh;
-    width: 50vw;
-    display: flex;
-    margin: 10rem;
-    border: 0.2rem solid black;
+.before-after-container {
+    height: 100vh;
+    padding: 10rem;
+    background-color: black;
 
-    .before-after-container__left-part {
-        background-color: chartreuse;
-    }
+    &__right-part {
+        background-image: url(https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg);
+        height: 100%;
+        background-repeat: no-repeat;
 
-    .before-after-container__right-part {
-        background-color: pink;
+        .before-after-container__left-part {
+            background-image: url(https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg);
+            height: 100%;
+            filter: grayscale(1);
+            background-repeat: no-repeat;
+        }
     }
 }
