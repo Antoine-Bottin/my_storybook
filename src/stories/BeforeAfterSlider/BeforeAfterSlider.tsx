@@ -3,7 +3,7 @@ import React, { ReactElement, useRef, useState } from 'react'
 import './styles.scss'
 
 export const BeforeAfterSlider = () => {
-    const ref = useRef(null)
+    const elementRef = useRef(null)
 
     const [mousePosition, setMousePosition] = useState({ X: 0, Y: 0 })
     const [elementWidth, setElementWidth] = useState(0)
@@ -41,10 +41,14 @@ export const BeforeAfterSlider = () => {
                     className="before-after-container__left-part"
                     style={{
                         width: `${leftPartWidth}%`,
-                        backgroundColor: 'red',
                     }}
                 ></div>
-                <div className="before-after-container__right-part"></div>
+                <div
+                    className="before-after-container__right-part"
+                    style={{
+                        width: `${100 - leftPartWidth}%`,
+                    }}
+                ></div>
             </div>
         </>
     )
