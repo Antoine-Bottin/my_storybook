@@ -1,8 +1,8 @@
 import { ReactElement } from 'react'
 import { useState } from 'react'
 import './style.scss'
-import * as React from 'react'
-import * as classNames from 'classnames'
+import React from 'react'
+import classNames from 'classnames'
 
 interface Props {
     backgroundColor?: string
